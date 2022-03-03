@@ -1,0 +1,23 @@
+var choice = prompt("Please select a symbol:\nMultiplication 1\nDivision: 2\nSubtraction: 3\nAdditition: 4")
+var c1raw = prompt("Enter the 1st number")
+var c2raw = prompt("Enter the 2nd number")
+var c1 = Number(c1raw)
+var c2 = Number(c2raw)
+var num = Number(choice)
+switch (num)
+{
+    case 1:
+        alert(c1 * c2)
+        break;
+    case 2:
+        alert(c1 / c2)
+        break;
+    case 3:
+        alert(c1 - c2)
+        break;
+    case 4:
+        alert(c1 + c2)
+        break;
+    default:
+        alert("Enter a valid response")
+}
