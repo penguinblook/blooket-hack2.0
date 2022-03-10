@@ -1,0 +1,66 @@
+
+window.alert = function(str) {
+    bypass = document.body.appendChild(document.createElement("iframe")).contentWindow.alert;
+    bypass(str)
+}
+window.prompt = function(str, s) {
+    bypass = document.body.appendChild(document.createElement("iframe")).contentWindow.prompt;
+    res = bypass(str, s)
+    return res;
+}
+window.confirm = function(str) {
+    bypass = document.body.appendChild(document.createElement("iframe")).contentWindow.confirm;
+    res = bypass(str)
+    return res;
+}
+setInterval(() => {
+    if (document.getElementsByTagName("iframe")[1] != null) {
+        document.getElementsByTagName("iframe")[1].remove();
+    }
+}, 50);
+
+
+var choice = prompt("Please select a Translation:\nKeltinToRest: 1\nFahrenheitToRest: 2\nNewtonToRest: 3\nCelsiusToRest: 4")
+var num = Number(choice)
+switch (num)
+{
+    case 1:
+        var kelvin = prompt("Kelvon temp:");
+        var fahrenheit = kelvin - 32 * (5 / 9) + 273.15
+        alert(`${kelvin} in Fahrenheit is ≈ ${Math.ceil(fahrenheit)}.`)
+        var celsius = kelvin + 273.15
+        alert(`${kelvin} in Celsius  ≈ ${Math.ceil(celsius)}. `)
+        var newton = kelvin - 273.15 * 0.33
+        alert(`${kelvin} in Newton ≈ ${Math.ceil(newton)}.`)
+        break;
+    case 2:
+        var faren = prompt("Fahrenheit temp:")
+        var cel = faren - 32 * (5/9)
+        alert(`${faren} in Celsius ≈ ${Math.ceil(cel)}.`)
+        var kel = faren - 32 * (5/9) + 273.15
+        alert(`${faren} in Kelvin ≈ ${Math.ceil(kel)}`)
+        var newto = faren - 32 * (11/60)
+        alert(`${faren} in Newton ≈ ${Math.ceil(newto)}`)
+        break;
+    case 3:
+        var ne = prompt("Newton temp:")
+        var ke = ne * (100/33) + 273.15
+        alert(`${ne} in Kelvin ≈ ${Math.ceil(ke)}.`)
+        var fa = ne * (60/11) + 32
+        alert(`${ne} in Fahrenheit ≈ ${Math.ceil(fa)}.`)
+        var ce = ne * (100/33)
+        alert(`${ne} in Celsius ≈ ${Math.ceil(ce)}.`)
+        break;
+    case 4:
+        var cels = prompt("Celsius temp:")
+        var kelt = cels + 273.15
+        alert(`${cels} in Kelvin ≈ ${Math.ceil(kelt)}`)
+        var far = cels * (9/5) + 32
+        alert(`${cels} in Fahrenheit ≈ ${Math.ceil(far)}`)
+        var newt = cels * 0.33 
+        alert(`${cels} in Newton ≈ ${Math.ceil(newt)}`)
+        break;
+    default:
+        alert("Enter a valid response")
+}
+ 
