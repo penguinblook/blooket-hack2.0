@@ -1,0 +1,9 @@
+function start() {
+ 
+}
+
+alert("The caculator has started");
+var  key = prompt("What key would you like to open the caculator with?");
+window.addEventListener("keydown", function(e) {
+        if (e.key ==  num
+
